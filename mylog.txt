@@ -1,0 +1,66 @@
+2021-09-03: Used the 09_arctic_hydrology_transport demo to start setting up simulations with tracer for Sebastian.
+            The xml was not running immediately, so I updated using the input converter 1.1-main and fixed some errors
+            based on error messages. As I could see no sign of a tracer in the results, I replaced the list:
+
+            <ParameterList name="source terms">
+              <ParameterList name="concentration">
+                <ParameterList name="SOURCE: Tracer">
+                  <Parameter name="regions" type="Array(string)" value="{tracer application}" />
+                  <Parameter name="spatial distribution method" type="string" value="volume" />
+                  <Parameter name="component names" type="Array(string)" value="{tracer}" />
+                  <ParameterList name="source function">
+                    <ParameterList name="function-tabular">
+                      <Parameter name="y values" type="Array(double)" value="{0.0001, 0}" />
+                      <Parameter name="x values" type="Array(double)" value="{1555200,17280000}" />
+                      <Parameter name="forms" type="Array(string)" value="{constant}" />
+                    </ParameterList>
+                  </ParameterList>
+                </ParameterList>
+              </ParameterList>
+            </ParameterList>
+
+            With one from https://github.com/amanzi/ats-regression-tests/blob/master/06_transport/subsurface_tracer.xml
+            Looking like:
+
+            <ParameterList name="source terms" type="ParameterList">
+              <ParameterList name="component mass source" type="ParameterList">
+                <ParameterList name="tracer2" type="ParameterList">
+                <Parameter name="regions" type="Array(string)" value="{well}" />
+                <Parameter name="spatial distribution method" type="string" value="none" />
+                <Parameter name="component names" type="Array(string)" value="{Tracer2}" />
+                <ParameterList name="source function" type="ParameterList">
+                  <Parameter name="number of dofs" type="int" value="1" />
+                  <ParameterList name="dof 1 function">
+                    <ParameterList name="function-constant" type="ParameterList">
+                      <Parameter name="value" type="double" value="1.0" />
+                    </ParameterList>
+                  </ParameterList>
+                </ParameterList>
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+
+          Still not sure what this actually does! In the output, tracer = 0 all the time, but a tracer can be seen in
+          total concentration in VisIt. Also played with the location, concentration, and timing of the tracer, and
+          added a hillslope mesh.
+To do:    Make a better mesh (less deep?). Apply Disko data, and run spinup. Set up a fancy repo to  share with Sebastian,
+          and if needed ATS developers.
+
+2021-09-04: Set up directory for simulations: Documents/Research/projects/Sebastian/Disco/disko_ats/
+            Made a column mesh and set up spin up simulations for the disko site.
+            freezeup.xml is based on xml-file from ats-demos/06_arctic_hydrology and sets hydrostatic
+            conditions and freezes column from below, using parameterization mainly from old Disko simulations,
+            and for wrm a mix with those in the original freezeup.xml file, as simulations crashed using the
+            wrm parameter settings from old disko runs.
+            /scripts/column_data.py contains some python code to generate column_data.h5 from column simulations
+            output for using as initial conditions for later runs. This code is copied mainly from
+            ATS_SRC_DIR/tools/utils/column_data.py, which I could not get to run as is. Note that column mesh has top z
+            coordinate = 0, and decreasing to negative  values down the mesh, while the 2d mesh has 100 as the top z coordinate.
+            Tested running transient simulations with disko data (and Tavva data for shortwave rad) on both column and
+            2d mesh based on output from spinup.
+To do:      -check input parameters and data with Sebastian.
+            -check how much spin up is needed for simulations
+            -snow cover currently reaches 2 meters in the winter.
+            -transport model is coupled but not sure what it does and how it should look
+            -observation output needs to be set up.
+            -boundary conditions? How long time series for climate data do we have?
