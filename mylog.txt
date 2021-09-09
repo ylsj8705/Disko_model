@@ -64,3 +64,18 @@ To do:      -check input parameters and data with Sebastian.
             -transport model is coupled but not sure what it does and how it should look
             -observation output needs to be set up.
             -boundary conditions? How long time series for climate data do we have?
+2021-09-09: Input parameters checked with Sebastian. WRM parameters changes (slightly) and run equally well as the ones from 
+            the demo for freezeup.xml and transient_column.xml. Permeability values from local observations are higher than those
+             from the demo (if they are correct!) by about two orders of magnitude. Higher permeabilities gives slower runs, but 
+             the new values (~1e-9) give appr. equal run times for the freezeup.xml and transient_ccolumn.xml. Changing the thermal
+             conductivity from 2.2 to 1 for the mineral soil results in the freezeup solumn not being completely frozen after 1000 years.
+             Set up SEB boundary conditions for transient_column.xml based on idealized/smooth data from Sebastian, using bc.py. 
+             transient_column.xml run 10 years with different snow and checking stability of active layer thickness. With 3times the snow
+             precip from SEbastians data, snow thickness reaches around 60 cm in winter and active layer is still increases (at 1.2 m)
+             after 10 years. Changed bottom boundary to 270.65 K. The increasing AL may be due to the column setup missing moisture
+             dynamics and stability should be checked on the slope simulation.
+To do:       
+             - add observations output to transient_slope.xml
+             - make new meshes based on data from Sebastian
+             - set up transient_slope.xml with new data and parameters
+             - check/calibrate snow thickness, and potential other variables with observations.

@@ -218,7 +218,7 @@
             <Parameter name="region" type="string" value="peat" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
             <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.0008" />
-            <Parameter name="van Genuchten n [-]" type="double" value="1.474" />
+            <Parameter name="van Genuchten n [-]" type="double" value="1.9" />
             <Parameter name="residual saturation [-]" type="double" value="0.04" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.05" />
           </ParameterList>
@@ -226,16 +226,16 @@
             <Parameter name="region" type="string" value="mineral" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
             <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00035" />
-            <Parameter name="van Genuchten n [-]" type="double" value="1.686" />
-            <Parameter name="residual saturation [-]" type="double" value="0.2" />
+            <Parameter name="van Genuchten n [-]" type="double" value="3.18" />
+            <Parameter name="residual saturation [-]" type="double" value="0.053" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.05" />
           </ParameterList>
           <ParameterList name="rock" type="ParameterList">
             <Parameter name="region" type="string" value="rock" />
             <Parameter name="WRM Type" type="string" value="van Genuchten" />
             <Parameter name="van Genuchten alpha [Pa^-1]" type="double" value="0.00035" />
-            <Parameter name="van Genuchten n [-]" type="double" value="1.686" />
-            <Parameter name="residual saturation [-]" type="double" value="0.2" />
+            <Parameter name="van Genuchten n [-]" type="double" value="3.18" />
+            <Parameter name="residual saturation [-]" type="double" value="0.053" />
             <Parameter name="smoothing interval width [saturation]" type="double" value="0.05" />
           </ParameterList>
         </ParameterList>
@@ -271,7 +271,7 @@
             <Parameter name="regions" type="Array(string)" value="{bottom face}" />
             <ParameterList name="boundary temperature" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="271.65" />
+                <Parameter name="value" type="double" value="270.65" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -373,7 +373,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.94" />
+                <Parameter name="value" type="double" value="0.9" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -382,7 +382,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="0.6" />
+                <Parameter name="value" type="double" value="0.7" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -425,7 +425,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="4.8e-11" />
+                <Parameter name="value" type="double" value="1.5e-9" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -434,7 +434,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="1.e-11" />
+                <Parameter name="value" type="double" value="1.e-9" />
               </ParameterList>
             </ParameterList>
           </ParameterList>

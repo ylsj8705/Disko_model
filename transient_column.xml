@@ -12,7 +12,7 @@
     <ParameterList name="domain" type="ParameterList">
       <Parameter name="mesh type" type="string" value="read mesh file" />
       <ParameterList name="read mesh file parameters" type="ParameterList">
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_column.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
       </ParameterList>
     </ParameterList>
@@ -42,7 +42,7 @@
     <ParameterList name="subsurface domain peat" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1001" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_column.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="cell" />
       </ParameterList>
@@ -50,7 +50,7 @@
     <ParameterList name="subsurface domain mineral" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1002" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_column.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="cell" />
       </ParameterList>
@@ -58,7 +58,7 @@
     <ParameterList name="subsurface domain rock" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="101" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_column.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="cell" />
       </ParameterList>
@@ -71,14 +71,14 @@
     </ParameterList>
     <ParameterList name="east" type="ParameterList">
       <ParameterList name="region: plane" type="ParameterList">
-        <Parameter name="point" type="Array(double)" value="{80, 0, 0}" />
-        <Parameter name="normal" type="Array(double)" value="{ 1, 0, 0}" />
+        <Parameter name="point" type="Array(double)" value="{1, 0, 0}" />
+        <Parameter name="normal" type="Array(double)" value="{1, 0, 0}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="surface" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="2" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_column.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -86,7 +86,7 @@
     <ParameterList name="bottom face" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_column.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -108,43 +108,49 @@
   <ParameterList name="cycle driver" type="ParameterList">
     <Parameter name="start time" type="double" value="0" />
     <Parameter name="start time units" type="string" value="d" />
-    <Parameter name="end time" type="double" value="365" />
+    <Parameter name="end time" type="double" value="3650" />
     <Parameter name="end time units" type="string" value="d" />
     <ParameterList name="required times" type="ParameterList">
       <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
       <Parameter name="times start period stop units" type="string" value="d" />
     </ParameterList>
     <ParameterList name="PK tree" type="ParameterList">
-      <ParameterList name="flow transport energy coupler">
-        <Parameter name="PK type" type="string" value="flow reactive transport" />
-        <ParameterList name="coupled SEB and permafrost" type="ParameterList">
-          <Parameter name="PK type" type="string" value="strong MPC" />
-          <ParameterList name="SEB" type="ParameterList">
-            <Parameter name="PK type" type="string" value="surface balance implicit subgrid" />
-          </ParameterList>
-          <ParameterList name="permafrost surface and subsurface" type="ParameterList">
-            <Parameter name="PK type" type="string" value="permafrost model" />
-            <ParameterList name="subsurface flow" type="ParameterList">
-              <Parameter name="PK type" type="string" value="permafrost flow" />
-            </ParameterList>
-            <ParameterList name="surface flow" type="ParameterList">
-              <Parameter name="PK type" type="string" value="overland flow with ice" />
-            </ParameterList>
-            <ParameterList name="subsurface energy" type="ParameterList">
-              <Parameter name="PK type" type="string" value="three-phase energy" />
-            </ParameterList>
-            <ParameterList name="surface energy" type="ParameterList">
-              <Parameter name="PK type" type="string" value="surface energy" />
-            </ParameterList>
-          </ParameterList>
+      <ParameterList name="Top level MPC" type="ParameterList">
+        <Parameter name="PK type" type="string" value="weak MPC" />
+        <ParameterList name="snow distribution" type="ParameterList">
+          <Parameter name="PK type" type="string" value="snow distribution" />
         </ParameterList>
-        <ParameterList name="surface-subsurface transport coupler" type="ParameterList">
-          <Parameter name="PK type" type="string" value="surface subsurface transport" />
-          <ParameterList name="subsurface transport" type="ParameterList">
-            <Parameter name="PK type" type="string" value="transport ATS" />
+        <ParameterList name="flow transport energy coupler">
+          <Parameter name="PK type" type="string" value="flow reactive transport" />
+          <ParameterList name="coupled SEB and permafrost" type="ParameterList">
+            <Parameter name="PK type" type="string" value="strong MPC" />
+            <ParameterList name="SEB" type="ParameterList">
+              <Parameter name="PK type" type="string" value="surface balance implicit subgrid" />
+            </ParameterList>
+            <ParameterList name="permafrost surface and subsurface" type="ParameterList">
+              <Parameter name="PK type" type="string" value="permafrost model" />
+              <ParameterList name="subsurface flow" type="ParameterList">
+                <Parameter name="PK type" type="string" value="permafrost flow" />
+              </ParameterList>
+              <ParameterList name="surface flow" type="ParameterList">
+                <Parameter name="PK type" type="string" value="overland flow with ice" />
+              </ParameterList>
+              <ParameterList name="subsurface energy" type="ParameterList">
+                <Parameter name="PK type" type="string" value="three-phase energy" />
+              </ParameterList>
+              <ParameterList name="surface energy" type="ParameterList">
+                <Parameter name="PK type" type="string" value="surface energy" />
+              </ParameterList>
+            </ParameterList>
           </ParameterList>
-          <ParameterList name="surface transport" type="ParameterList">
-            <Parameter name="PK type" type="string" value="transport ATS" />
+          <ParameterList name="surface-subsurface transport coupler" type="ParameterList">
+            <Parameter name="PK type" type="string" value="surface subsurface transport" />
+            <ParameterList name="subsurface transport" type="ParameterList">
+              <Parameter name="PK type" type="string" value="transport ATS" />
+            </ParameterList>
+            <ParameterList name="surface transport" type="ParameterList">
+              <Parameter name="PK type" type="string" value="transport ATS" />
+            </ParameterList>
           </ParameterList>
         </ParameterList>
       </ParameterList>
@@ -152,12 +158,105 @@
   </ParameterList>
   <ParameterList name="PKs" type="ParameterList">
 
+    <ParameterList name="Top level MPC" type="ParameterList">
+      <Parameter name="PK type" type="string" value="weak MPC" />
+      <Parameter name="PKs order" type="Array(string)" value="{snow distribution, flow transport energy coupler}" />
+
+    </ParameterList>
 
     <ParameterList name="flow transport energy coupler">
       <Parameter name="PK type" type="string" value="flow reactive transport" />
       <Parameter name="PK name" type="string" value="flow transport energy coupler" />
       <Parameter name="PKs order" type="Array(string)" value="{coupled SEB and permafrost, surface-subsurface transport coupler}" />
       <Parameter name="master PK index" type="int" value="0" />
+    </ParameterList>
+
+    <ParameterList name="snow distribution" type="ParameterList">
+      <Parameter name="PK type" type="string" value="snow distribution" />
+      <Parameter name="primary variable key" type="string" value="snow-precipitation" />
+      <Parameter name="conserved quantity key" type="string" value="snow-precipitation" />
+      <Parameter name="domain name" type="string" value="snow" />
+      <Parameter name="initial time step" type="double" value="60" />
+      <Parameter name="upwind conductivity method" type="string" value="upwind by potential difference" />
+      <Parameter name="debug cells" type="Array(int)" value="{0,20}" />
+      <Parameter name="distribution time" type="double" value="86400" />
+
+      <ParameterList name="precipitation function" type="ParameterList">
+        <ParameterList name="function-tabular" type="ParameterList">
+          <Parameter name="file" type="string" value="../data_processed/spinup_disko.h5" />
+          <Parameter name="x header" type="string" value="time" />
+          <Parameter name="y header" type="string" value="Ps" />
+        </ParameterList>
+      </ParameterList>
+
+      <ParameterList name="time integrator" type="ParameterList">
+        <Parameter name="extrapolate initial guess" type="bool" value="false" />
+        <Parameter name="solver type" type="string" value="nka_bt_ats" />
+        <Parameter name="timestep controller type" type="string" value="smarter" />
+        <ParameterList name="nka_bt_ats parameters" type="ParameterList">
+          <Parameter name="nka lag iterations" type="int" value="2" />
+          <Parameter name="max backtrack steps" type="int" value="10" />
+          <Parameter name="max total backtrack steps" type="int" value="20" />
+          <Parameter name="backtrack lag" type="int" value="0" />
+          <Parameter name="last backtrack iteration" type="int" value="10" />
+          <Parameter name="backtrack factor" type="double" value="0.25" />
+          <Parameter name="backtrack tolerance" type="double" value=" 0" />
+          <Parameter name="nonlinear tolerance" type="double" value="0.02" />
+          <Parameter name="diverged tolerance" type="double" value="1000000" />
+          <Parameter name="limit iterations" type="int" value="21" />
+        </ParameterList>
+
+        <ParameterList name="timestep controller smarter parameters" type="ParameterList">
+          <Parameter name="max iterations" type="int" value="18" />
+          <Parameter name="min iterations" type="int" value="10" />
+          <Parameter name="time step reduction factor" type="double" value="0.75" />
+          <Parameter name="time step increase factor" type="double" value="1.5" />
+          <Parameter name="max time step" type="double" value="86400" />
+          <Parameter name="min time step" type="double" value="1e-10" />
+          <Parameter name="growth wait after fail" type="int" value="2" />
+          <Parameter name="count before increasing increase factor" type="int" value="2" />
+        </ParameterList>
+      </ParameterList>
+
+      <ParameterList name="diffusion" type="ParameterList">
+        <Parameter name="discretization primary" type="string" value="fv: default" />
+      </ParameterList>
+
+      <ParameterList name="diffusion preconditioner" type="ParameterList">
+        <Parameter name="Newton correction" type="string" value="true Jacobian" />
+      </ParameterList>
+
+      <ParameterList name="inverse" type="ParameterList">
+        <Parameter name="preconditioning method" type="string" value="boomer amg" />
+        <Parameter name="iterative method" type="string" value="gmres" />
+        <ParameterList name="boomer amg parameters" type="ParameterList">
+          <Parameter name="cycle applications" type="int" value="1" />
+          <Parameter name="smoother sweeps" type="int" value="2" />
+          <Parameter name="strong threshold" type="double" value="0.65" />
+          <Parameter name="tolerance" type="double" value=" 0" />
+        </ParameterList>
+        <ParameterList name="gmres parameters" type="ParameterList">
+          <Parameter name="preconditioning strategy" type="string" value="left" />
+          <Parameter name="error tolerance" type="double" value="1e-06" />
+          <Parameter name="convergence criteria" type="Array(string)" value="{relative residual,make one iteration}" />
+          <Parameter name="maximum number of iteration" type="int" value="80" />
+        </ParameterList>
+      </ParameterList>
+
+      <ParameterList name="initial condition" type="ParameterList">
+        <ParameterList name="function" type="ParameterList">
+          <ParameterList name="initial snow pack" type="ParameterList">
+            <Parameter name="region" type="string" value="surface domain" />
+            <Parameter name="component" type="string" value="cell" />
+            <ParameterList name="function" type="ParameterList">
+              <ParameterList name="function-constant" type="ParameterList">
+                <Parameter name="value" type="double" value=" 0" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+
     </ParameterList>
 
     <ParameterList name="coupled SEB and permafrost" type="ParameterList">
@@ -370,7 +469,7 @@
             <Parameter name="regions" type="Array(string)" value="{bottom face}" />
             <ParameterList name="boundary temperature" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="271.65" />
+                <Parameter name="value" type="double" value="270.65" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -401,7 +500,7 @@
           <ParameterList name="mineral" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain mineral" />
             <Parameter name="thermal conductivity type" type="string" value="three-phase wet/dry" />
-            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="1." />
+            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="2.2" />
             <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.3" />
             <Parameter name="unsaturated alpha frozen [-]" type="double" value="0.73" />
             <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.8" />
@@ -409,7 +508,7 @@
           <ParameterList name="rock" type="ParameterList">
             <Parameter name="region" type="string" value="subsurface domain rock" />
             <Parameter name="thermal conductivity type" type="string" value="three-phase wet/dry" />
-            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="1." />
+            <Parameter name="thermal conductivity, saturated (unfrozen) [W m^-1 K^-1]" type="double" value="2.2" />
             <Parameter name="thermal conductivity, dry [W m^-1 K^-1]" type="double" value="0.3" />
             <Parameter name="unsaturated alpha frozen [-]" type="double" value="0.73" />
             <Parameter name="unsaturated alpha unfrozen [-]" type="double" value="0.8" />
@@ -476,7 +575,6 @@
       <Parameter name="domain name" type="string" value="snow" />
       <Parameter name="primary variable key" type="string" value="snow-depth" />
       <Parameter name="conserved quantity key" type="string" value="snow-water_equivalent" />
-      <Parameter name="source term" type="bool" value="true" />
       <Parameter name="source key" type="string" value="snow-source_sink" />
       <Parameter name="source term is differentiable" type="bool" value="false" />
       <ParameterList name="initial condition" type="ParameterList">
@@ -835,7 +933,7 @@
             <Parameter name="components" type="Array(string)" value="{cell,boundary_face}" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value=" 10" />
+                <Parameter name="value" type="double" value=" 1" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -850,7 +948,7 @@
             <Parameter name="components" type="Array(string)" value="{cell}" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="250" />
+                <Parameter name="value" type="double" value="100" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -937,7 +1035,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="1.5e-7" />
+                <Parameter name="value" type="double" value="1.5e-9" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -946,7 +1044,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
-                <Parameter name="value" type="double" value="1e-7" />
+                <Parameter name="value" type="double" value="1e-9" />
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -1096,23 +1194,6 @@
         </ParameterList>
       </ParameterList>
 
-      <ParameterList name="snow-precipitation" type="ParameterList">
-        <Parameter name="field evaluator type" type="string" value="independent variable" />
-        <ParameterList name="function" type="ParameterList">
-          <ParameterList name="domain" type="ParameterList">
-            <Parameter name="region" type="string" value="surface domain" />
-            <Parameter name="component" type="string" value="cell" />
-            <ParameterList name="function" type="ParameterList">
-              <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data_processed/spinup_disko.h5" />
-                <Parameter name="x header" type="string" value="/time" />
-                <Parameter name="y header" type="string" value="/Ps" />
-              </ParameterList>
-            </ParameterList>
-          </ParameterList>
-        </ParameterList>
-      </ParameterList>
-
       <ParameterList name="surface-incoming_longwave_radiation" type="ParameterList">
         <Parameter name="field evaluator type" type="string" value="incoming longwave radiation" />
       </ParameterList>
@@ -1224,7 +1305,7 @@
   </ParameterList>
 
   <ParameterList name="checkpoint" type="ParameterList">
-    <Parameter name="times start period stop 0" type="Array(double)" value="{ 0,100,-1}" />
+    <Parameter name="times start period stop 0" type="Array(double)" value="{ 0,10,-1}" />
     <Parameter name="times start period stop 0 units" type="string" value="noleap" />
   </ParameterList>
 </ParameterList>
