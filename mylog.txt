@@ -71,7 +71,7 @@ To do:      -check input parameters and data with Sebastian.
              conductivity from 2.2 to 1 for the mineral soil results in the freezeup solumn not being completely frozen after 1000 years.
              Set up SEB boundary conditions for transient_column.xml based on idealized/smooth data from Sebastian, using bc.py. 
              transient_column.xml run 10 years with different snow and checking stability of active layer thickness. With 3times the snow
-             precip from SEbastians data, snow thickness reaches around 60 cm in winter and active layer is still increases (at 1.2 m)
+             precip from Sebastians data, snow thickness reaches around 60 cm in winter and active layer is still increases (at 1.2 m)
              after 10 years. Changed bottom boundary to 270.65 K. The increasing AL may be due to the column setup missing moisture
              dynamics and stability should be checked on the slope simulation.
 To do:       
@@ -79,3 +79,11 @@ To do:
              - make new meshes based on data from Sebastian
              - set up transient_slope.xml with new data and parameters
              - check/calibrate snow thickness, and potential other variables with observations.
+2021-10     Set up a transient_slope.xml file based on Sebastians parameters, and added observations based on points from Sebastian.
+            Some parameters needed changing to run smoothly. The observation points were not located in the right locations, but several of them
+            were at depths below the active layer (1-2 m). Ran the transient_slope.xml with mpirun -n 8 on computerome, one year took ca 12 hours.
+            Have run 3 years so far and running 3-5 years now.
+
+To do:      - get the right depth of observation points from Sebastian
+            - Check that the dynamics are reasonably in accordance with observations.
+            - Check how steady-state-ish the model is after 5-10 years

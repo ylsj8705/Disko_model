@@ -101,35 +101,71 @@
         <Parameter name="high coordinate" type="Array(double)" value="{10,1e+20,1e+20}" />
       </ParameterList>
     </ParameterList>
+    <ParameterList name="right box" type="ParameterList">
+      <ParameterList name="region: box" type="ParameterList">
+        <Parameter name="low coordinate" type="Array(double)" value="{70,-1e+20,-1e+20}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{80,1e+20,1e+20}" />
+      </ParameterList>
+    </ParameterList>
     <ParameterList name="tracer application" type="ParameterList">
       <ParameterList name="region: logical">
         <Parameter name="operation" type="string" value="intersect" />
         <Parameter name="regions" type="Array(string)" value="{tracer box, subsurface domain peat}" />
       </ParameterList>
     </ParameterList>
+    <ParameterList name="peat right" type="ParameterList">
+      <ParameterList name="region: logical">
+        <Parameter name="operation" type="string" value="intersect" />
+        <Parameter name="regions" type="Array(string)" value="{right box, subsurface domain peat}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="mineral left" type="ParameterList">
+      <ParameterList name="region: logical">
+        <Parameter name="operation" type="string" value="intersect" />
+        <Parameter name="regions" type="Array(string)" value="{tracer box, subsurface domain mineral}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="mineral right" type="ParameterList">
+      <ParameterList name="region: logical">
+        <Parameter name="operation" type="string" value="intersect" />
+        <Parameter name="regions" type="Array(string)" value="{right box, subsurface domain mineral}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="surface left" type="ParameterList">
+      <ParameterList name="region: box" type="ParameterList">
+        <Parameter name="low coordinate" type="Array(double)" value="{ 0,-1e+20}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{ 10.,1e+20}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="surface right" type="ParameterList">
+      <ParameterList name="region: box" type="ParameterList">
+        <Parameter name="low coordinate" type="Array(double)" value="{ 70,-1e+20}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{ 80.,1e+20}" />
+      </ParameterList>
+    </ParameterList>
     <ParameterList name="subsurface point BotD" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{74.37,0.0,88.04}" />
+        <Parameter name="coordinate" type="Array(double)" value="{74.37,0.0,89.965}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point BotS" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{74.37,0.0,88.22}" />
+        <Parameter name="coordinate" type="Array(double)" value="{74.37,0.0,90.145}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid1" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{45.11,0.0,92.79}" />
+        <Parameter name="coordinate" type="Array(double)" value="{45.11,0.0,93.885}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid2" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{46.11,0.0,92.53}" />
+        <Parameter name="coordinate" type="Array(double)" value="{46.11,0.0,93.655}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid3" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{47.11,0.0,92.48}" />
+        <Parameter name="coordinate" type="Array(double)" value="{47.11,0.0,93.625}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid4" type="ParameterList">
@@ -139,22 +175,22 @@
     </ParameterList>
     <ParameterList name="subsurface point Mid5" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{50.11,0.0,92.01}" />
+        <Parameter name="coordinate" type="Array(double)" value="{50.11,0.0,93.395}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point TopD" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{15.2,0.0,97.41}" />
+        <Parameter name="coordinate" type="Array(double)" value="{15.2,0.0,97.735}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point TopS" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{15.2,0.0,97.21}" />
+        <Parameter name="coordinate" type="Array(double)" value="{15.2,0.0,97.535}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Top15" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{16.7,0.0,97.23}" />
+        <Parameter name="coordinate" type="Array(double)" value="{16.7,0.0,97.655}" />
       </ParameterList>
     </ParameterList>
   </ParameterList>
@@ -1349,21 +1385,54 @@
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>
-
-        <ParameterList name="thaw depth [m]" type="ParameterList">
+        <ParameterList name="thaw depth left [m]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-thaw_depth" />
-          <Parameter name="region" type="string" value="surface domain" />
+          <Parameter name="region" type="string" value="surface left" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>
-
-        <ParameterList name="water table depth [m]" type="ParameterList">
+        <ParameterList name="thaw depth right [m]" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-thaw_depth" />
+          <Parameter name="region" type="string" value="surface right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="water table depth left [m]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-water_table_depth" />
-          <Parameter name="region" type="string" value="surface domain" />
+          <Parameter name="region" type="string" value="surface left" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>
-
+        <ParameterList name="water table depth right [m]" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-water_table_depth" />
+          <Parameter name="region" type="string" value="surface right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="ponded depth left [m]" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-ponded_depth" />
+          <Parameter name="region" type="string" value="surface left" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="ponded depth right [m]" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-ponded_depth" />
+          <Parameter name="region" type="string" value="surface right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="snow depth left" type="ParameterList">
+          <Parameter name="variable" type="string" value="snow-depth" />
+          <Parameter name="region" type="string" value="surface left" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="snow depth right" type="ParameterList">
+          <Parameter name="variable" type="string" value="snow-depth" />
+          <Parameter name="region" type="string" value="surface right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
         <ParameterList name="surface temperature [K]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-temperature" />
           <Parameter name="region" type="string" value="surface domain" />
