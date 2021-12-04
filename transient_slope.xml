@@ -1228,7 +1228,7 @@
           </ParameterList>
         </ParameterList>
       </ParameterList>
-
+<!--
       <ParameterList name="snow-precipitation" type="ParameterList">
         <Parameter name="field evaluator type" type="string" value="independent variable" />
         <ParameterList name="function" type="ParameterList">
@@ -1240,6 +1240,35 @@
                 <Parameter name="file" type="string" value="../data_processed/spinup_disko.h5" />
                 <Parameter name="x header" type="string" value="/time" />
                 <Parameter name="y header" type="string" value="/Ps" />
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+        </ParameterList>
+      </ParameterList>
+-->
+      <ParameterList name="snow-precipitation" type="ParameterList">
+        <Parameter name="field evaluator type" type="string" value="independent variable" />
+        <ParameterList name="function" type="ParameterList">
+          <ParameterList name="domain" type="ParameterList">
+            <Parameter name="region" type="string" value="surface domain" />
+            <Parameter name="component" type="string" value="cell" />
+            <ParameterList name="function" type="ParameterList">
+              <ParameterList name="function-separable">
+                <ParameterList name="function2">
+                  <ParameterList name="function-tabular">
+                    <Parameter name="x values" type="Array(double)" value="{0.0, 80}"/>
+                    <Parameter name="y values" type="Array(double)" value="{2, 3.}"/>
+                    <Parameter name="forms" type="Array(string)" value="{linear}"/>
+                  </ParameterList>
+                </ParameterList>
+
+                <ParameterList name="function1">
+                  <ParameterList name="function-tabular" type="ParameterList">
+                    <Parameter name="file" type="string" value="../data_processed/spinup_disko.h5" />
+                    <Parameter name="x header" type="string" value="time" />
+                    <Parameter name="y header" type="string" value="Ps" />
+                  </ParameterList>
+                </ParameterList>
               </ParameterList>
             </ParameterList>
           </ParameterList>
@@ -1472,6 +1501,30 @@
         <ParameterList name="snow depth right" type="ParameterList">
           <Parameter name="variable" type="string" value="snow-depth" />
           <Parameter name="region" type="string" value="surface right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="tracer peat left" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="tracer application" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="tracer peat right" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="peat right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="tracer min left" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="mineral left" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="tracer min right" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="mineral right" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>

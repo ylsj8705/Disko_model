@@ -87,3 +87,5 @@ To do:
 To do:      - get the right depth of observation points from Sebastian
             - Check that the dynamics are reasonably in accordance with observations.
             - Check how steady-state-ish the model is after 5-10 years
+2021-12-02: Mad some additions and changes to input data to account for inflow at top of hill and include more rain and snow. Set up right depths for observations, as well as included a tracer with 0.1 concentration released from day 152-153 of 11th simulation year. Input data file now inlcudes 10 years of spinup followed by observed AT and P for 2016.
+
