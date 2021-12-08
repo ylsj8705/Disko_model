@@ -87,5 +87,17 @@ To do:
 To do:      - get the right depth of observation points from Sebastian
             - Check that the dynamics are reasonably in accordance with observations.
             - Check how steady-state-ish the model is after 5-10 years
-2021-12-02: Mad some additions and changes to input data to account for inflow at top of hill and include more rain and snow. Set up right depths for observations, as well as included a tracer with 0.1 concentration released from day 152-153 of 11th simulation year. Input data file now inlcudes 10 years of spinup followed by observed AT and P for 2016.
+2021-12-02: Mad some additions and changes to input data to account for inflow at top of hill and include more rain and snow. 
+            Set up right depths for observations, as well as included a tracer with 0.1 concentration released from day 152-153 
+            of 11th simulation year. Input data file now inlcudes 10 years of spinup followed by observed AT and P for 2016. 
+            New meshes with observed topography (disko_slope_obs_topo.exo) and  observed topo and organic layer thickness 
+            (disko_slope_obs_peat.exo). Removed heat advection from xml-files.
+            Set up 4 new simulations for 2016 with varying snow cover:
+            Snow2x -  2 times original snow cover 
+            Snow3x -  3 times original snow cover 
+            Snow5x -  5 times original snow cover 
+            Snow32x -  3 times original snow cover at top of slope, 2 times at bottom, and linear interpolation along the slope.
+To do:       - Evaluate output of simulation to find best snow cover parameterization.
+             - Set up spinup simulations with new meshes.
+             - Run new spinup of flat hillslope without advection and compare differences.
 
