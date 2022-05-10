@@ -42,7 +42,7 @@
     <ParameterList name="subsurface domain peat" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1001" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_slope_obs_peat.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="cell" />
       </ParameterList>
@@ -50,7 +50,7 @@
     <ParameterList name="subsurface domain mineral" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1002" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_slope_obs_peat.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="cell" />
       </ParameterList>
@@ -58,7 +58,7 @@
     <ParameterList name="subsurface domain rock" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="101" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_slope_obs_peat.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="cell" />
       </ParameterList>
@@ -78,7 +78,7 @@
     <ParameterList name="surface" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="2" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_slope_obs_peat.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
@@ -86,45 +86,45 @@
     <ParameterList name="bottom face" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="1" />
-        <Parameter name="file" type="string" value="../data_processed/disko_slope.exo" />
+        <Parameter name="file" type="string" value="../data_processed/disko_slope_obs_peat.exo" />
         <Parameter name="format" type="string" value="Exodus II" />
         <Parameter name="entity" type="string" value="face" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="peat topslope" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="low coordinate" type="Array(double)" value="{5.0,0.0,99.15}" />
-        <Parameter name="high coordinate" type="Array(double)" value="{5.0,1.0,99.35}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{5.0,0.0,98.83}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{5.0,1.0,99.03}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="mineral topslope" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="low coordinate" type="Array(double)" value="{5.0,0.0,96.35}" />
-        <Parameter name="high coordinate" type="Array(double)" value="{5.0,1.0,99.15}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{5.0,0.0,96.03}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{5.0,1.0,98.83}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="peat midslope" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="low coordinate" type="Array(double)" value="{40.0,0.0,94.6}" />
-        <Parameter name="high coordinate" type="Array(double)" value="{40.0,1.0,94.8}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{40.0,0.0,91.76}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{40.0,1.0,91.96}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="mineral midslope" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="low coordinate" type="Array(double)" value="{40.0,0.0,91.8}" />
-        <Parameter name="high coordinate" type="Array(double)" value="{40.0,1.0,94.6}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{40.0,0.0,88.96}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{40.0,1.0,91.76}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="peat downslope" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="low coordinate" type="Array(double)" value="{75.0,0.0,90.05}" />
-        <Parameter name="high coordinate" type="Array(double)" value="{75.0,1.0,90.25}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{75.0,0.0,87.89}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{75.0,1.0,88.09}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="mineral downslope" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
-        <Parameter name="low coordinate" type="Array(double)" value="{75.0,0.0,87.25}" />
-        <Parameter name="high coordinate" type="Array(double)" value="{75.0,1.0,90.05}" />
+        <Parameter name="low coordinate" type="Array(double)" value="{75.0,0.0,85.09}" />
+        <Parameter name="high coordinate" type="Array(double)" value="{75.0,1.0,87.89}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="surface topslope" type="ParameterList">
@@ -193,52 +193,52 @@
     </ParameterList>
     <ParameterList name="subsurface point BotD" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{74.37,0.0,89.98}" />
+        <Parameter name="coordinate" type="Array(double)" value="{74.5,0.0,87.75}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point BotS" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{74.37,0.0,90.16}" />
+        <Parameter name="coordinate" type="Array(double)" value="{74.5,0.0,87.93}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid1" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{45.11,0.0,93.936}" />
+        <Parameter name="coordinate" type="Array(double)" value="{45.,0.0,90.89}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid2" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{46.11,0.0,93.706}" />
+        <Parameter name="coordinate" type="Array(double)" value="{46.,0.0,90.59}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid3" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{47.11,0.0,93.676}" />
+        <Parameter name="coordinate" type="Array(double)" value="{47.,0.0,90.56}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid4" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.11,0.0,93.446}" />
+        <Parameter name="coordinate" type="Array(double)" value="{48.,0.0,90.26}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid5" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{50.11,0.0,93.286}" />
+        <Parameter name="coordinate" type="Array(double)" value="{50.,0.0,90.06}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point TopD" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{15.2,0.0,97.774}" />
+        <Parameter name="coordinate" type="Array(double)" value="{15.,0.0,97.41}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point TopS" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{15.2,0.0,97.574}" />
+        <Parameter name="coordinate" type="Array(double)" value="{15.,0.0,97.21}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Top15" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{16.7,0.0,97.629}" />
+        <Parameter name="coordinate" type="Array(double)" value="{16.5,0.0,96.99}" />
       </ParameterList>
     </ParameterList>
   </ParameterList>
@@ -246,9 +246,9 @@
   <ParameterList name="cycle driver" type="ParameterList">
     <Parameter name="start time" type="double" value="0" />
     <Parameter name="start time units" type="string" value="d" />
-    <Parameter name="end time" type="double" value="4016" />
+    <Parameter name="end time" type="double" value="10950" />
     <Parameter name="end time units" type="string" value="d" />
-    <Parameter name="restart from checkpoint file" type="string" value="../run9/checkpoint_final.h5" />
+    <Parameter name="restart from checkpoint file" type="string" value="../run_new/checkpoint87121.h5" /> -->
     <ParameterList name="required times" type="ParameterList">
       <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
       <Parameter name="times start period stop units" type="string" value="d" />
@@ -728,8 +728,8 @@
               <Parameter name="number of dofs" type="int" value="1" />
               <ParameterList name="dof 1 function">
                 <ParameterList name="function-tabular">
-                  <Parameter name="y values" type="Array(double)" value="{0.1, 0}" />
-                  <Parameter name="x values" type="Array(double)" value="{328492800,328579200}" />
+                  <Parameter name="y values" type="Array(double)" value="{0.,0., 0.1, 0}" />
+                  <Parameter name="x values" type="Array(double)" value="{0,328492700, 328492800, 328579200}" />
                   <Parameter name="forms" type="Array(string)" value="{constant}" />
                 </ParameterList>
                 <!--
@@ -1144,7 +1144,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data_processed/spinup_run_disko.h5" />
+                <Parameter name="file" type="string" value="../data_processed/spinup_run_disko2.h5" />
                 <Parameter name="x header" type="string" value="/time" />
                 <Parameter name="y header" type="string" value="/Qswin" />
               </ParameterList>
@@ -1176,7 +1176,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data_processed/spinup_run_disko.h5" />
+                <Parameter name="file" type="string" value="../data_processed/spinup_run_disko2.h5" />
                 <Parameter name="x header" type="string" value="/time" />
                 <Parameter name="y header" type="string" value="/Ta" />
               </ParameterList>
@@ -1193,7 +1193,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data_processed/spinup_run_disko.h5" />
+                <Parameter name="file" type="string" value="../data_processed/spinup_run_disko2.h5" />
                 <Parameter name="x header" type="string" value="/time" />
                 <Parameter name="y header" type="string" value="/RH" />
               </ParameterList>
@@ -1210,7 +1210,7 @@
             <Parameter name="component" type="string" value="cell" />
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-tabular" type="ParameterList">
-                <Parameter name="file" type="string" value="../data_processed/spinup_run_disko.h5" />
+                <Parameter name="file" type="string" value="../data_processed/spinup_run_disko2.h5" />
                 <Parameter name="x header" type="string" value="/time" />
                 <Parameter name="y header" type="string" value="/Us" />
               </ParameterList>
@@ -1254,7 +1254,7 @@
 
                 <ParameterList name="function1">
                   <ParameterList name="function-tabular" type="ParameterList">
-                    <Parameter name="file" type="string" value="../data_processed/spinup_run_disko.h5" />
+                    <Parameter name="file" type="string" value="../data_processed/spinup_run_disko2.h5" />
                     <Parameter name="x header" type="string" value="time" />
                     <Parameter name="y header" type="string" value="Pr" />
                   </ParameterList>
@@ -1300,7 +1300,7 @@
 
                 <ParameterList name="function1">
                   <ParameterList name="function-tabular" type="ParameterList">
-                    <Parameter name="file" type="string" value="../data_processed/spinup_run_disko.h5" />
+                    <Parameter name="file" type="string" value="../data_processed/spinup_run_disko2.h5" />
                     <Parameter name="x header" type="string" value="time" />
                     <Parameter name="y header" type="string" value="Ps" />
                   </ParameterList>
@@ -1416,18 +1416,19 @@
   </ParameterList>
   <ParameterList name="visualization" type="ParameterList">
     <ParameterList name="domain" type="ParameterList">
-      <Parameter name="times start period stop 0" type="Array(double)" value="{ 0, 10,-1}" />
+      <Parameter name="times start period stop 0" type="Array(double)" value="{ 3650, 30,-1}" />
       <Parameter name="times start period stop 0 units" type="string" value="d" />
     </ParameterList>
     <ParameterList name="surface" type="ParameterList">
-      <Parameter name="times start period stop 0" type="Array(double)" value="{ 0, 10,-1}" />
+      <Parameter name="times start period stop 0" type="Array(double)" value="{ 3650, 30,-1}" />
       <Parameter name="times start period stop 0 units" type="string" value="d" />
     </ParameterList>
     <ParameterList name="snow" type="ParameterList">
-      <Parameter name="times start period stop 0" type="Array(double)" value="{ 0, 10,-1}" />
+      <Parameter name="times start period stop 0" type="Array(double)" value="{ 3650, 30,-1}" />
       <Parameter name="times start period stop 0 units" type="string" value="d" />
     </ParameterList>
   </ParameterList>
+
 
   <ParameterList name="observations" type="ParameterList">
     <ParameterList name="observation file" type="ParameterList">
@@ -1496,42 +1497,42 @@
           <Parameter name="variable" type="string" value="mass_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="peat topslope" />
-          <Parameter name="functional" type="string" value="observation data: extensive integral" />
+          <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="face" />
         </ParameterList>
         <ParameterList name="top mass flux mineral" type="ParameterList">
           <Parameter name="variable" type="string" value="mass_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="mineral topslope" />
-          <Parameter name="functional" type="string" value="observation data: extensive integral" />
+          <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="face" />
         </ParameterList>
         <ParameterList name="mid mass flux peat" type="ParameterList">
           <Parameter name="variable" type="string" value="mass_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="peat midslope" />
-          <Parameter name="functional" type="string" value="observation data: extensive integral" />
+          <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="face" />
         </ParameterList>
         <ParameterList name="mid mass flux mineral" type="ParameterList">
           <Parameter name="variable" type="string" value="mass_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="mineral midslope" />
-          <Parameter name="functional" type="string" value="observation data: extensive integral" />
+          <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="face" />
         </ParameterList>
         <ParameterList name="bottom mass flux peat" type="ParameterList">
           <Parameter name="variable" type="string" value="mass_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="peat downslope" />
-          <Parameter name="functional" type="string" value="observation data: extensive integral" />
+          <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="face" />
         </ParameterList>
         <ParameterList name="bottom mass flux mineral" type="ParameterList">
           <Parameter name="variable" type="string" value="mass_flux" />
           <Parameter name="direction normalized flux" type="bool" value="true" />
           <Parameter name="region" type="string" value="mineral downslope" />
-          <Parameter name="functional" type="string" value="observation data: extensive integral" />
+          <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="face" />
         </ParameterList>
         <ParameterList name="thaw depth left [m]" type="ParameterList">
@@ -1870,7 +1871,7 @@
     </ParameterList>
   </ParameterList>
   <ParameterList name="checkpoint" type="ParameterList">
-    <Parameter name="times start period stop 0" type="Array(double)" value="{ 0,10,-1}" />
+    <Parameter name="times start period stop 0" type="Array(double)" value="{ 0,365,-1}" />
     <Parameter name="times start period stop 0 units" type="string" value="d" />
   </ParameterList>
 </ParameterList>
