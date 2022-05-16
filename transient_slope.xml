@@ -246,9 +246,9 @@
   <ParameterList name="cycle driver" type="ParameterList">
     <Parameter name="start time" type="double" value="0" />
     <Parameter name="start time units" type="string" value="d" />
-    <Parameter name="end time" type="double" value="10950" />
+    <Parameter name="end time" type="double" value="8760" />
     <Parameter name="end time units" type="string" value="d" />
-    <Parameter name="restart from checkpoint file" type="string" value="../run_new/checkpoint87121.h5" /> -->
+    <Parameter name="restart from checkpoint file" type="string" value="../run_new/checkpoint46691.h5" /> -->
     <ParameterList name="required times" type="ParameterList">
       <Parameter name="times start period stop" type="Array(double)" value="{ 0, 1,-1}" />
       <Parameter name="times start period stop units" type="string" value="d" />
@@ -728,9 +728,9 @@
               <Parameter name="number of dofs" type="int" value="1" />
               <ParameterList name="dof 1 function">
                 <ParameterList name="function-tabular">
-                  <Parameter name="y values" type="Array(double)" value="{0.,0., 0.1, 0}" />
-                  <Parameter name="x values" type="Array(double)" value="{0,328492700, 328492800, 328579200}" />
-                  <Parameter name="forms" type="Array(string)" value="{constant}" />
+                  <Parameter name="y values" type="Array(double)" value="{0., 0.8, 0}" />
+                  <Parameter name="x values" type="Array(double)" value="{0, 328492800, 328579200}" />
+                  <Parameter name="forms" type="Array(string)" value="{constant, constant}" />
                 </ParameterList>
                 <!--
                 <ParameterList name="function-constant" type="ParameterList">
@@ -1605,6 +1605,102 @@
           <Parameter name="variable" type="string" value="total_component_concentration" />
           <Parameter name="region" type="string" value="mineral right" />
           <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="liquid peat left" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_liquid" />
+          <Parameter name="region" type="string" value="tracer application" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="liquid peat right" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_liquid" />
+          <Parameter name="region" type="string" value="peat right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="liquid min left" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_liquid" />
+          <Parameter name="region" type="string" value="mineral left" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="liquid min right" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_liquid" />
+          <Parameter name="region" type="string" value="mineral right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="ice peat left" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_ice" />
+          <Parameter name="region" type="string" value="tracer application" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="ice peat right" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_ice" />
+          <Parameter name="region" type="string" value="peat right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="ice min left" type="ParameterList">
+          <Parameter name="variable" type="string" value="ice_liquid" />
+          <Parameter name="region" type="string" value="mineral left" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="ice min right" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_ice" />
+          <Parameter name="region" type="string" value="mineral right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="gas peat left" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_gas" />
+          <Parameter name="region" type="string" value="tracer application" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="gas peat right" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_gas" />
+          <Parameter name="region" type="string" value="peat right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="gas min left" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_gas" />
+          <Parameter name="region" type="string" value="mineral left" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="gas min right" type="ParameterList">
+          <Parameter name="variable" type="string" value="saturation_gas" />
+          <Parameter name="region" type="string" value="mineral right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="water peat left" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_content" />
+          <Parameter name="region" type="string" value="tracer application" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="water peat right" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_content" />
+          <Parameter name="region" type="string" value="peat right" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="water min left" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_content" />
+          <Parameter name="region" type="string" value="mineral left" />
+          <Parameter name="functional" type="string" value="extensive integral" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="water min right" type="ParameterList">
+          <Parameter name="variable" type="string" value="water_content" />
+          <Parameter name="region" type="string" value="mineral right" />
+          <Parameter name="functional" type="string" value="extensive integral" />
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>
         <ParameterList name="surface temperature [K]" type="ParameterList">
