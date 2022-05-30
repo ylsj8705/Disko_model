@@ -193,52 +193,52 @@
     </ParameterList>
     <ParameterList name="subsurface point BotD" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{74.5,0.0,87.75}" />
+        <Parameter name="coordinate" type="Array(double)" value="{74.37,0.0,87.75}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point BotS" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{74.5,0.0,87.93}" />
+        <Parameter name="coordinate" type="Array(double)" value="{74.37,0.0,87.88}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid1" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{45.,0.0,90.89}" />
+        <Parameter name="coordinate" type="Array(double)" value="{45.11,0.0,90.85}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid2" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{46.,0.0,90.59}" />
+        <Parameter name="coordinate" type="Array(double)" value="{46.11,0.0,90.52}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid3" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{47.,0.0,90.56}" />
+        <Parameter name="coordinate" type="Array(double)" value="{47.11,0.0,90.60}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid4" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{48.,0.0,90.26}" />
+        <Parameter name="coordinate" type="Array(double)" value="{48.11,0.0,90.28}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Mid5" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{50.,0.0,90.06}" />
+        <Parameter name="coordinate" type="Array(double)" value="{50.11,0.0,90.12}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point TopD" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{15.,0.0,97.41}" />
+        <Parameter name="coordinate" type="Array(double)" value="{15.20,0.0,97.29}" />
       </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point TopS" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{15.,0.0,97.21}" />
-      </ParameterList>
+        <Parameter name="coordinate" type="Array(double)" value="{15.20,0.0,97.49}" />
+    </ParameterList>
     </ParameterList>
     <ParameterList name="subsurface point Top15" type="ParameterList">
       <ParameterList name="region: point" type="ParameterList">
-        <Parameter name="coordinate" type="Array(double)" value="{16.5,0.0,96.99}" />
+        <Parameter name="coordinate" type="Array(double)" value="{16.70,0.0,96.92}" />
       </ParameterList>
     </ParameterList>
   </ParameterList>
