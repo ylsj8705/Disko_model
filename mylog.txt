@@ -100,4 +100,21 @@ To do:      - get the right depth of observation points from Sebastian
 To do:       - Evaluate output of simulation to find best snow cover parameterization.
              - Set up spinup simulations with new meshes.
              - Run new spinup of flat hillslope without advection and compare differences.
+2021-12-20: Run simulations with real topo and peat layer with reduced conductitvity to check if soil moisture reaches higher, more realistic, levels.
+             - lowcond1 contains case with 10 times lower conductivity in top 2 layers.
+             - manning20 also has manning changed from 10 to 20
+             - precipt2 also has double precip
+             Lower conductivity matters and conductivity could realistically be lowered a lot more. Setting up
+             - lowcond2: 100 times lower permeability
+             - lowcond3: 1000 times lower permeability
+
+
+2022_06-28: (Some log entries are missing from this spring.) Have run some test simulations for rcp 
+             cases with tracer application. Due to some errors in input precipitation data, Sebastian
+             is fixing new data to run simulations with. Aim is to make a file with forcing data 
+             starting with 10 years spinup (sine climate) followed by the observation years, followed
+             by rcp cases. Simulations will be run on mesh with and without micro topography. Output 
+             will focus on water balance (storage), x-velocities, thaw depth, water table, snow thickness,
+             Tracer concentrations up and downslope.
+
 

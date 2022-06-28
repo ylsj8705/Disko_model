@@ -179,6 +179,18 @@
         <Parameter name="regions" type="Array(string)" value="{right box, subsurface domain mineral}" />
       </ParameterList>
     </ParameterList>
+    <ParameterList name="rock right" type="ParameterList">
+      <ParameterList name="region: logical">
+        <Parameter name="operation" type="string" value="intersect" />
+        <Parameter name="regions" type="Array(string)" value="{right box, subsurface domain rock}" />
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="rock left" type="ParameterList">
+      <ParameterList name="region: logical">
+        <Parameter name="operation" type="string" value="intersect" />
+        <Parameter name="regions" type="Array(string)" value="{tracer box, subsurface domain rock}" />
+      </ParameterList>
+    </ParameterList>
     <ParameterList name="surface left" type="ParameterList">
       <ParameterList name="region: box" type="ParameterList">
         <Parameter name="low coordinate" type="Array(double)" value="{ 0,-1e+20}" />
@@ -246,7 +258,7 @@
   <ParameterList name="cycle driver" type="ParameterList">
     <Parameter name="start time" type="double" value="0" />
     <Parameter name="start time units" type="string" value="d" />
-    <Parameter name="end time" type="double" value="8760" />
+    <Parameter name="end time" type="double" value="10950" />
     <Parameter name="end time units" type="string" value="d" />
     <Parameter name="restart from checkpoint file" type="string" value="../run_new/checkpoint46691.h5" /> -->
     <ParameterList name="required times" type="ParameterList">
@@ -1462,6 +1474,18 @@
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>
+        <ParameterList name="evaporation rate left [m s^-1]" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-evaporative_flux" />
+          <Parameter name="region" type="string" value="surface left" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="evaporation rate right [m s^-1]" type="ParameterList">
+          <Parameter name="variable" type="string" value="surface-evaporative_flux" />
+          <Parameter name="region" type="string" value="surface right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
         <ParameterList name="discharge [mol s^-1]" type="ParameterList">
           <Parameter name="variable" type="string" value="surface-mass_flux" />
           <Parameter name="region" type="string" value="surface outlet" />
@@ -1607,6 +1631,30 @@
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>
+        <ParameterList name="tracer rock right" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="rock right" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="tracer rock left" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="rock left" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="tracer subsurface domain" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="subsurface domain" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
+        <ParameterList name="tracer surface domain" type="ParameterList">
+          <Parameter name="variable" type="string" value="total_component_concentration" />
+          <Parameter name="region" type="string" value="surface domain" />
+          <Parameter name="functional" type="string" value="average" />
+          <Parameter name="location name" type="string" value="cell" />
+        </ParameterList>
         <ParameterList name="liquid peat left" type="ParameterList">
           <Parameter name="variable" type="string" value="saturation_liquid" />
           <Parameter name="region" type="string" value="tracer application" />
@@ -1644,7 +1692,7 @@
           <Parameter name="location name" type="string" value="cell" />
         </ParameterList>
         <ParameterList name="ice min left" type="ParameterList">
-          <Parameter name="variable" type="string" value="ice_liquid" />
+          <Parameter name="variable" type="string" value="saturation_ice" />
           <Parameter name="region" type="string" value="mineral left" />
           <Parameter name="functional" type="string" value="average" />
           <Parameter name="location name" type="string" value="cell" />
